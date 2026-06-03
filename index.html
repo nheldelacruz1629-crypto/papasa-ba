@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PasadoBa?</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1e40af',     // Deep Indigo Blue
+              secondary: '#1d4ed8',   // Accent Blue Focus
+              background: '#f8fafc',  // Soft Layout White
+              foreground: '#0f172a',  // Content Text Slate
+              muted: '#f1f5f9',       // Clean Border Gray
+              card: '#ffffff',        // Solid Panel White
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        background-color: #f8fafc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+  </body>
+</html>
+<body class="antialiased transition-colors duration-200">
+  <div id="root"></div>
+  <script type="module" src="/main.tsx"></script>
+</body>
