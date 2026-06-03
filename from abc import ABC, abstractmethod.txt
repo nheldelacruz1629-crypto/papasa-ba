@@ -1,0 +1,76 @@
+from abc import ABC, abstractmethod
+
+# 1. Define an abstract base class/interface
+class PaymentMethod(ABC):
+    
+    @abstractmethod
+    def validate(self):
+        """Abstract method to validate the payment method."""
+        pass
+    
+    @abstractmethod
+    def process_payment(self, amount: float):
+        """Abstract method to process the payment."""
+        pass
+
+# 2. Create concrete subclasses
+
+class CreditCardPayment(PaymentMethod):
+    def __init__(self, card_number):
+        self.card_number = card_number
+        
+    # Overriding the abstract methods
+    def validate(self):
+        print(f"[Credit Card] Validating card number: ****-****-****-{self.card_number[-4:]}")
+        # In a real system, you'd check length, format, expiry, etc.
+        
+    def process_payment(self, amount: float):
+        print(f"[Credit Card] Processing payment of ${amount:.2f} via Credit Card network.\n")
+
+
+class PayPalPayment(PaymentMethod):
+    def __init__(self, email):
+        self.email = email
+        
+    # Overriding the abstract methods
+    def validate(self):
+        print(f"[PayPal] Validating account for email: {self.email}")
+        print("[PayPal] Simulating secure login...")
+        
+    def process_payment(self, amount: float):
+        print(f"[PayPal] Processing payment of ${amount:.2f} from PayPal balance.\n")
+
+
+class CryptoPayment(PaymentMethod):
+    def __init__(self, wallet_address):
+        self.wallet_address = wallet_address
+        
+    # Overriding the abstract methods
+    def validate(self):
+        print(f"[Crypto] Checking wallet address: {self.wallet_address}")
+        print("[Crypto] Verifying network compatibility...")
+        
+    def process_payment(self, amount: float):
+        print(f"[Crypto] Confirming blockchain transfer of ${amount:.2f} to merchant wallet.\n")
+
+
+# 3. Create a polymorphic function
+# This function processes objects differently depending on their class type.
+def checkout(payment: PaymentMethod, amount: float):
+    print("--- Initiating Checkout ---")
+    payment.validate()
+    payment.process_payment(amount)
+
+
+# 4. Main/test function to demonstrate behavior
+if __name__ == "__main__":
+    # Instantiate each payment type with sample data
+    my_credit_card = CreditCardPayment("1234-5678-9012-3456")
+    my_paypal = PayPalPayment("shopper@example.com")
+    my_crypto = CryptoPayment("0xABC123DEF456GHI789")
+    
+    # Call checkout() using different payment objects. 
+    # Notice how we use the exact same function (checkout) but achieve different behaviors.
+    checkout(my_credit_card, 150.50)
+    checkout(my_paypal, 45.99)
+    checkout(my_crypto, 900.00)
