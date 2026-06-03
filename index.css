@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import "tailwindcss";
 
 :root {
@@ -14,4 +15,22 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: system-ui, -apple-system, sans-serif;
+=======
+@import "tailwindcss";
+
+:root {
+  --color-primary: #1e40af;       /* Deep Blue Brand Color */
+  --color-secondary: #1d4ed8;     /* Accent Blue */
+  --color-background: #f8fafc;    /* Light Gray Layout Background */
+  --color-foreground: #0f172a;    /* Dark Text Slate */
+  --color-muted: #f1f5f9;         /* Light Gray Borders */
+  --color-card: #ffffff;          /* White Content Cards */
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: system-ui, -apple-system, sans-serif;
+>>>>>>> 90632e0b5e3a6c78717e56d883c4bb10c9025207
 }

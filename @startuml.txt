@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @startuml
 class Subject {
   - String subject_name
@@ -16,4 +17,24 @@ class SubjectManager {
 
 SubjectManager "1" *-`- "many" Subject : manages >
 Subject "1" o-- "1" Strategy : uses >
+=======
+@startuml
+class Subject {
+  - String subject_name
+  - Strategy grading_strategy
+  - List assessments
+  + setGradingStrategy(strategy)
+  + add_assessment(item)
+  + get_final_grade()
+}
+
+class SubjectManager {
+  - Map all_subjects
+  + create_new_subject()
+  + get_subject(name)
+}
+
+SubjectManager "1" *-`- "many" Subject : manages >
+Subject "1" o-- "1" Strategy : uses >
+>>>>>>> 90632e0b5e3a6c78717e56d883c4bb10c9025207
 @enduml

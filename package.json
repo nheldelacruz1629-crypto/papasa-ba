@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "pasadoba-app",
   "private": true,
@@ -18,4 +19,26 @@
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   }
+=======
+{
+  "name": "pasadoba-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "lucide-react": "^0.400.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1"
+  }
+>>>>>>> 90632e0b5e3a6c78717e56d883c4bb10c9025207
 }
